@@ -11,12 +11,12 @@ public class SomaParImar {
 		ArrayList<Float> par = new ArrayList<>();
 		ArrayList<Float> impar = new ArrayList<>();
 
-		float[] numeros = new float[15];
+		float[] numeros = new float[60];
 		int somaPar = 0;
 		int somaImpar = 0;
 		int i = 0;
 		
-		while (numeros[i]<=5) {
+		
 			for (; i < numeros.length; i++) {
 
 				if (i % 2 == 0) {
@@ -28,12 +28,16 @@ public class SomaParImar {
 					impar.add((float) i);
 
 				}
+				if((somaPar>1000)&&(somaImpar>1000)) {
+					System.out.println("A soma dos pares ultrapassou 1000");
+					System.exit(0);
+				}
 			}
 			Arrays.sort(numeros);
 			JOptionPane.showMessageDialog(null,
 					"Soma dos numeros pares: " + somaPar + "\n" + "Soma dos numeros Impares: " + somaImpar + "\n"
 							+ "Números Pares: " + par + "\n" + "Numeros Impares: " + impar);
-		}
+		
 	}
 
 }
