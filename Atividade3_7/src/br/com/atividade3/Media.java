@@ -14,10 +14,10 @@ public class Media {
 		double soma = 0;
 		int quantidade = 0;
 
-		int i;
+		//int i;
 		quantidade = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade que queira analizar"));
 		float vetor[] = new float[quantidade];
-		for (i = 0; i < quantidade; i++) {
+		for (int i = 0; i < quantidade; i++) {
 			vetor[i] = Float.parseFloat(JOptionPane.showInputDialog("Digite a " + (i + 1) + " média"));
 			lista.add(vetor[i]);
 			soma += vetor[i];

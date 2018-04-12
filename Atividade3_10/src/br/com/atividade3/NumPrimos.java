@@ -11,6 +11,7 @@ public class NumPrimos {
 		Scanner sc = new Scanner(System.in);
 		int[] numeros = new int[10];
 		int i = 0;
+		int soma=0;
 
 		for (; i < numeros.length; i++) {
 			System.out.println("Digite:");
@@ -18,7 +19,7 @@ public class NumPrimos {
 			if (eNumeroPrimo(numeros[i])) {
 
 				primo.add(numeros[i]);
-
+                soma+=numeros[i];
 			} else {
 				naoPrimo.add(numeros[i]);
 
@@ -27,6 +28,7 @@ public class NumPrimos {
 		}
 
 		System.out.println("Números Primos: " + primo);
+		System.out.println("Soma dos numeros Primos: " + soma);
 		System.out.println("Números não Primos: " + naoPrimo);
 
 	}
