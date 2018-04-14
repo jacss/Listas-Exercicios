@@ -6,46 +6,30 @@ import java.util.Scanner;
 public class NumPrimos {
 
 	public static void main(String[] args) {
-		ArrayList<Integer> primo = new ArrayList<>();
-		ArrayList<Integer> naoPrimo = new ArrayList<>();
 		Scanner sc = new Scanner(System.in);
-		int[] numeros = new int[10];
-		int i = 0;
-		int soma=0;
+		ArrayList<Integer> primos = new ArrayList<>();
+		ArrayList<Integer> naoprimos = new ArrayList<>();
 
-		for (; i < numeros.length; i++) {
-			System.out.println("Digite:");
-			numeros[i] = sc.nextInt();
-			if (eNumeroPrimo(numeros[i])) {
+		int numero;
+		System.out.println("Digite um numero");
+		numero = sc.nextInt();
+		for (int i = 1; i < numero; i++) {
+			int contador = 0;
+			for (int j = 1; j <= i; j++) {
 
-				primo.add(numeros[i]);
-                soma+=numeros[i];
+				if (i % j == 0)
+					contador++;
+			}
+			if (contador == 2) {
+				primos.add(i);
+
 			} else {
-				naoPrimo.add(numeros[i]);
-
+				naoprimos.add(i);
 			}
 
 		}
-
-		System.out.println("Números Primos: " + primo);
-		System.out.println("Soma dos numeros Primos: " + soma);
-		System.out.println("Números não Primos: " + naoPrimo);
-
-	}
-
-	public static boolean eNumeroPrimo(int numero) {
-		boolean eNumeroPrimo = false;
-		int contador = 0;
-		for (int i = 1; i <= numero; i++) {
-			if (numero % i == 0) {
-				contador++;
-			}
-		}
-		if (contador == 2) {
-			eNumeroPrimo = true;
-
-		}
-		return eNumeroPrimo;
+		System.out.print("Primos: " + primos + "\n");
+		System.out.print("Não primos: " + naoprimos);
 	}
 
 }

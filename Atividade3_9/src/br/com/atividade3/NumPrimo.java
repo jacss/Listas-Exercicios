@@ -1,36 +1,26 @@
 package br.com.atividade3;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NumPrimo {
 
 	public static void main(String[] args) {
-		int verifica;
-		System.out.println("Digite um numero");
-		Scanner sc = new Scanner(System.in);
-		verifica=sc.nextInt();
-		if(eNumeroPrimo(verifica)) {
-			System.out.println("O numero : "+verifica+ " é primo");
-		}else {
-			System.out.println("O numero : "+verifica+ " não é primo");
-		}
-		
-
-	}
-
-	public static boolean eNumeroPrimo(int numero) {
-		boolean primo = false;
+		int numero = 0;
 		int contador = 0;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Digite um número.");
+		numero = sc.nextInt();
 		for (int i = 1; i <= numero; i++) {
 			if (numero % i == 0) {
 				contador++;
 			}
 		}
 		if (contador == 2) {
-			primo = true;
-
+			System.out.println("O numero " + numero + " é Primo.");
+		} else {
+			System.out.println("O numero " + numero + " não é Primo.");
 		}
 
-		return primo;
 	}
 }
