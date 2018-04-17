@@ -6,35 +6,26 @@ import java.util.Scanner;
 
 public class ParOuImpar {
 
-	public void mostraParImpar() {
+	public static void main(String[] args) {
 		ArrayList<Integer> nPar = new ArrayList<>();
 		ArrayList<Integer> nImpar = new ArrayList<>();
-		int[] num = new int[10];
-		String par = null;
-		String impar = null;
-		Scanner scanner = new Scanner(System.in);
-		for (int i = 0; i < num.length; i++) {
-			System.out.println("Digite os numeros");
-			num[i] = scanner.nextInt();
-			if (num[i] % 2 == 0) {
-				nPar.add(num[i]);
 
-			} else if(num[i]%2!=0){
+		Scanner sc = new Scanner(System.in);
+		int numero;
+		System.out.println("Ditige um numero");
+		numero = sc.nextInt();
+		for (int i = 0; i < numero; i++) {
+			if (i % 2 == 0) {
+				nPar.add(i);
 
+			} else {
+				nImpar.add(i);
 
-				nImpar.add(num[i]);
 			}
 
 		}
-		System.out.println("Numeros pares: " + nPar);
-		System.out.println("Numeros impares: " + nImpar);
-
-	}
-
-	public static void main(String[] args) {
-		ParOuImpar p = new ParOuImpar();
-		p.mostraParImpar();
-
+		System.out.print("Primos: " + nPar + "\n");
+		System.out.print("Não Primos: " + nImpar);
 	}
 
 }
